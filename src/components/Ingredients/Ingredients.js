@@ -5,13 +5,11 @@ class Ingredients extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log(this.props);
         this.handleDetails = this.handleDetails.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="row">
                 <h4 className="text-upper text-left">Ingredients</h4>

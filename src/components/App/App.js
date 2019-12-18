@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import Header from "../Header/header";
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
 
 import Pizza from "../Pizza/Pizza";
 import AddIngredient from "../AddIngredient/AddIngredient";
@@ -36,6 +36,9 @@ class App extends Component {
                     <Route exact path={"/ingredient/:name/edit"}
                            render={(props) => <AddIngredient isEdit={true} {...props}/>}>
                     </Route>
+                    <Route exact path={"/"} render={() => <AddIngredient isEdit={false}/>}>
+                    </Route>
+                    <Redirect to={"/"} />
 
                 </div>
             </Router>

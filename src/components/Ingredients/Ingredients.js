@@ -6,6 +6,7 @@ class Ingredients extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {ingredients: this.props.ingredients};
         this.handleDetails = this.handleDetails.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
     }
@@ -42,8 +43,8 @@ class Ingredients extends React.Component {
 
     getTableBody() {
         return (<tbody>
-        {this.props.ingredients.map(o => {
-            return (<tr>
+        {this.state.ingredients.map(o => {
+            return (<tr key={o.name}>
                 <td scope="col">{o.name}</td>
                 <td scope="col">{o.amount}g</td>
                 <td scope="col">{o.veggie}</td>
@@ -70,7 +71,12 @@ class Ingredients extends React.Component {
     }
 
     handleRemove(name) {
-        ingredientsService.deleteIngredient(name);
+        ingredientsService.deleteIngredient(name)
+            .then(() => {
+                this.setState((prev) => {
+                    prev.ingredients.filter(o => o.name !== name).concat([])
+                });
+            });
     }
 
     handleDetails(name) {

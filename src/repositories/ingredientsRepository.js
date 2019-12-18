@@ -17,7 +17,7 @@ const ingredientsService = {
         return axios.get(`${BASE_URL}/ingredients/${name}`)
     },
     deleteIngredient: (name) => {
-        return axios.delete(`/ingredients/${name}`);
+        return axios.delete(`${BASE_URL}/ingredients/${name}`);
     }
 };
 

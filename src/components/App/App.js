@@ -6,7 +6,7 @@ import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
 import Pizza from "../Pizza/Pizza";
 import AddIngredient from "../AddIngredient/AddIngredient";
 import Ingredients from "../Ingredients/Ingredients";
-import ingredientsService, {getAllIngredients} from "../../repositories/ingredientsRepository";
+import ingredientsService from "../../repositories/ingredientsRepository";
 
 class App extends Component {
 

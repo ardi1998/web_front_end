@@ -12,7 +12,8 @@ class AddIngredient extends Component {
             name: '',
             spicy: false,
             veggie: false,
-            amount: 0.0
+            amount: 0.0,
+            save: false
         };
 
         this.handleTextChange = this.handleTextChange.bind(this);
@@ -76,6 +77,7 @@ class AddIngredient extends Component {
                             className="offset-sm-1 col-sm-3  text-center">
                             <button
                                 type="submit"
+                                disabled={!this.state.save}
                                 className="btn btn-primary text-upper">
                                 Save
                             </button>
@@ -108,7 +110,8 @@ class AddIngredient extends Component {
             name: '',
             amount: 0.0,
             spicy: false,
-            veggie: false
+            veggie: false,
+            save: false
         });
     }
 
@@ -119,7 +122,21 @@ class AddIngredient extends Component {
     }
 
     handleTextChange(event) {
-        this.setState({[event.target.id]: event.target.value});
+        event.persist();
+        this.setState((prev) => {
+            let save = false;
+            if (event.target.id === "name") {
+                save = 50 > event.target.value.length && event.target.value.length > 0
+                    && 50 > prev.amount.length && prev.amount.length > 0;
+            } else {
+                save = 50 > event.target.value.length && event.target.value.length > 0
+                    && 50 > prev.name.length && prev.name.length > 0;
+            }
+            return {
+                [event.target.id]: event.target.value,
+                save
+            }
+        });
     }
 
     handleCheckboxChange(event) {

@@ -2,6 +2,12 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 class Ingredients extends React.Component {
+
+    constructor(props) {
+        super(props);
+
+    }
+
     render() {
         console.log(this.props);
         return (
@@ -46,11 +52,12 @@ class Ingredients extends React.Component {
                         <span className="fa fa-edit"/>
                         <span><strong>Edit</strong></span>
                     </button>
-                    <button className="btn btn-sm btn-outline-secondary ">
+                    <button onClick={this.handleRemove(o.name)} className="btn btn-sm btn-outline-secondary ">
                         <span className="fa fa-remove"/>
                         <span><strong>Remove</strong></span>
                     </button>
-                    <button className="btn btn-sm btn-outline-dark">
+                    <button className="btn btn-sm btn-outline-dark"
+                            onClick={this.handleRemove(o.name)}>
                         <span><strong>Details</strong></span>
                     </button>
                 </td>
@@ -59,6 +66,14 @@ class Ingredients extends React.Component {
         }
 
         </tbody>);
+    }
+
+    handleRemove(name) {
+        // TODO: Send remove request to API
+    }
+
+    handleDetails(name) {
+        //TODO: Redirect to details of name
     }
 
 }

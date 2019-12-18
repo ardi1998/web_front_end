@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import ingredientsService from "../../repositories/ingredientsRepository";
 
 
 // TODO: in case it is edit it should make call to api
@@ -11,12 +12,9 @@ class AddIngredient extends Component {
             spicy: false,
             veggie: false,
             amount: 0.0,
-            save: false
+            save: props.isEdit,
+            isEdit: props.isEdit
         };
-
-        if (props.isEdit) {
-            this.getIngredient();
-        }
 
         this.getIngredient = this.getIngredient.bind(this);
 
@@ -29,9 +27,8 @@ class AddIngredient extends Component {
     }
 
     componentDidMount() {
-        this.isEdit = this.props.isEdit;
-        if (this.isEdit) {
-            // TODO: make call to API to set currentIngredient
+        if (this.state.isEdit) {
+            this.getIngredient();
         }
     }
 
@@ -120,10 +117,13 @@ class AddIngredient extends Component {
     }
 
     handleSubmit(event) {
-        // TODO: sent request to API to save currentIngredient
         event.preventDefault();
-        console.log(this.state);
-        // TODO: redirect user to /ingredients
+        if (this.state.isEdit)
+            ingredientsService.addIngredient(this.state)
+                .then(o => this.props.history.push(`/ingredient/${o.data}`));
+        else
+            ingredientsService.editIngredient(this.state)
+                .then(o => this.props.history.push(`/ingredient/${o.data}`));
     }
 
     handleTextChange(event) {
@@ -155,6 +155,8 @@ class AddIngredient extends Component {
     getIngredient() {
         // TODO: make call to API to get ingredient
         const name = this.props.match.params.name;
+        ingredientsService.getIngredient(name)
+            .then(o => this.setState(o.data));
     }
 }
 

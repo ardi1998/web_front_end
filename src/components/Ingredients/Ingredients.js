@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import ingredientsService from "../../repositories/ingredientsRepository";
 
 class Ingredients extends React.Component {
 
@@ -69,15 +70,15 @@ class Ingredients extends React.Component {
     }
 
     handleRemove(name) {
-        // TODO: Send remove request to API
+        ingredientsService.deleteIngredient(name);
     }
 
     handleDetails(name) {
-        this.props.history.push('/ingredient/' + name);
+        this.props.history.push(`/ingredient/${name}`);
     }
 
     handleEdit(name) {
-        this.props.history.push('/ingredient/' + name + '/edit');
+        this.props.history.push(`/ingredient/${name}/edit`);
     }
 
 }

@@ -3,8 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="125f9768-75c1-4f5e-9b2a-591f71145539" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddIngredient/AddIngredient.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddIngredient/AddIngredient.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Ingredients/Ingredients.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Ingredients/Ingredients.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/ingredientsRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/ingredientsRepository.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,10 +21,19 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Ingredient/Ingredient.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Ingredients/Ingredients.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+            <state relative-caret-position="226">
+              <caret line="76" column="37" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="n#!!block;n#getTableHead#0;n#Ingredients#0" />
@@ -31,63 +43,38 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Ingredient/Ingredient.js">
+        <entry file="file://$PROJECT_DIR$/src/repositories/ingredientsRepository.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="289">
+              <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="n#!!block;n#constructor#0;n#App#0" />
-                <element signature="n#!!block;n#componentDidMount#0;n#App#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Header/header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="53" selection-start-line="7" selection-start-column="53" selection-end-line="7" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/repositories/ingredientsRepository.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/AddIngredient/AddIngredient.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="158" column="1" lean-forward="true" selection-start-line="158" selection-start-column="1" selection-end-line="158" selection-end-column="1" />
+            <state relative-caret-position="272">
+              <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
               <folding>
-                <element signature="n#!!block;n#componentDidMount#0;n#AddIngredient#0" />
+                <element signature="e#0#39#0" expanded="true" />
                 <element signature="n#!!block;n#render#0;n#AddIngredient#0" />
                 <element signature="n#!!block;n#getContent#0;n#AddIngredient#0" />
                 <element signature="n#!!block;n#handleReset#0;n#AddIngredient#0" />
-                <element signature="n#!!block;n#handleSubmit#0;n#AddIngredient#0" />
-                <element signature="n#!!block;n#handleTextChange#0;n#AddIngredient#0" />
                 <element signature="n#!!block;n#handleCheckboxChange#0;n#AddIngredient#0" />
                 <element signature="n#!!block;n#handleCancel#0;n#AddIngredient#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="434">
+              <caret line="56" column="19" lean-forward="true" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -121,20 +108,21 @@
         <option value="$PROJECT_DIR$/src/components/App.js" />
         <option value="$PROJECT_DIR$/src/components/header.js" />
         <option value="$PROJECT_DIR$/src/components/Pizza/Pizza.js" />
-        <option value="$PROJECT_DIR$/src/repositories/ingredientsRepository.js" />
         <option value="$PROJECT_DIR$/src/components/Ingredient/Ingredient.js" />
-        <option value="$PROJECT_DIR$/src/components/AddIngredient/AddIngredient.js" />
-        <option value="$PROJECT_DIR$/src/components/Ingredients/Ingredients.js" />
         <option value="$PROJECT_DIR$/src/components/Header/header.js" />
+        <option value="$PROJECT_DIR$/src/components/Ingredients/Ingredients.js" />
+        <option value="$PROJECT_DIR$/src/repositories/axios.js" />
+        <option value="$PROJECT_DIR$/src/repositories/ingredientsRepository.js" />
         <option value="$PROJECT_DIR$/src/components/App/App.js" />
+        <option value="$PROJECT_DIR$/src/components/AddIngredient/AddIngredient.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="261" />
-    <option name="y" value="108" />
-    <option name="width" value="1944" />
-    <option name="height" value="816" />
+    <option name="x" value="-11" />
+    <option name="y" value="-11" />
+    <option name="width" value="983" />
+    <option name="height" value="1043" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -166,13 +154,6 @@
               <item name="web-lab3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="AddIngredient" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-lab3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-lab3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="App" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -180,28 +161,7 @@
               <item name="web-lab3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Header" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-lab3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-lab3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Ingredient" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-lab3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-lab3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="Ingredients" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="web-lab3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="web-lab3" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Pizza" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="web-lab3" type="b2602c69:ProjectViewProjectNode" />
@@ -280,7 +240,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1576674604340</updated>
-      <workItem from="1576674605739" duration="16326000" />
+      <workItem from="1576674605739" duration="19785000" />
     </task>
     <task id="LOCAL-00001" summary="added header html">
       <created>1576675800685</created>
@@ -317,11 +277,27 @@
       <option name="project" value="LOCAL" />
       <updated>1576694433453</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fixed redirect">
+      <created>1576696369746</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1576696369746</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16326000" />
+    <option name="totallyTimeSpent" value="19785000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -329,7 +305,7 @@
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info id="npm" order="1" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="2" visible="true" weight="0.24960254" />
+      <window_info content_ui="combo" id="Project" order="2" weight="0.24960254" />
       <window_info id="Structure" order="3" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Messages" weight="0.3285968" />
       <window_info anchor="bottom" id="Terminal" order="0" />
@@ -342,7 +318,7 @@
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39964476" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="bottom" id="TODO" order="10" weight="0.3285968" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -378,7 +354,8 @@
     <MESSAGE value="implemented add ingredient" />
     <MESSAGE value="disable save on add ingredient" />
     <MESSAGE value="implemented simple redirects" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented simple redirects" />
+    <MESSAGE value="fixed redirect" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed redirect" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package.json">
@@ -412,37 +389,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/AddIngredient/AddIngredient.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="158" column="1" lean-forward="true" selection-start-line="158" selection-start-column="1" selection-end-line="158" selection-end-column="1" />
-          <folding>
-            <element signature="n#!!block;n#componentDidMount#0;n#AddIngredient#0" />
-            <element signature="n#!!block;n#render#0;n#AddIngredient#0" />
-            <element signature="n#!!block;n#getContent#0;n#AddIngredient#0" />
-            <element signature="n#!!block;n#handleReset#0;n#AddIngredient#0" />
-            <element signature="n#!!block;n#handleSubmit#0;n#AddIngredient#0" />
-            <element signature="n#!!block;n#handleTextChange#0;n#AddIngredient#0" />
-            <element signature="n#!!block;n#handleCheckboxChange#0;n#AddIngredient#0" />
-            <element signature="n#!!block;n#handleCancel#0;n#AddIngredient#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/repositories/ingredientsRepository.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Ingredient/Ingredient.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Header/header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -453,10 +399,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/repositories/axios.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="56" column="19" lean-forward="true" selection-start-line="56" selection-start-column="19" selection-end-line="56" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Ingredients/Ingredients.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
+        <state relative-caret-position="226">
+          <caret line="76" column="37" selection-start-line="76" selection-start-column="37" selection-end-line="76" selection-end-column="37" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="n#!!block;n#getTableHead#0;n#Ingredients#0" />
@@ -464,14 +427,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/App/App.js">
+    <entry file="file://$PROJECT_DIR$/src/components/Ingredient/Ingredient.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="40" column="40" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="40" />
+        <state relative-caret-position="119">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/repositories/ingredientsRepository.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="6" lean-forward="true" selection-start-line="17" selection-start-column="6" selection-end-line="17" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/AddIngredient/AddIngredient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="10" lean-forward="true" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-            <element signature="n#!!block;n#constructor#0;n#App#0" />
-            <element signature="n#!!block;n#componentDidMount#0;n#App#0" />
+            <element signature="n#!!block;n#render#0;n#AddIngredient#0" />
+            <element signature="n#!!block;n#getContent#0;n#AddIngredient#0" />
+            <element signature="n#!!block;n#handleReset#0;n#AddIngredient#0" />
+            <element signature="n#!!block;n#handleCheckboxChange#0;n#AddIngredient#0" />
+            <element signature="n#!!block;n#handleCancel#0;n#AddIngredient#0" />
           </folding>
         </state>
       </provider>

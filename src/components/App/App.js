@@ -6,7 +6,7 @@ import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
 import Pizza from "../Pizza/Pizza";
 import AddIngredient from "../AddIngredient/AddIngredient";
 import Ingredients from "../Ingredients/Ingredients";
-import {getAllIngredients} from "../../repositories/ingredientsRepository";
+import ingredientsService, {getAllIngredients} from "../../repositories/ingredientsRepository";
 
 class App extends Component {
 
@@ -28,7 +28,8 @@ class App extends Component {
                 <div className="container">
                     <Route path={"/pizzas"} render={() => <Pizza/>}>
                     </Route>
-                    <Route exact path={"/ingredients/new"} render={() => <AddIngredient isEdit={false}/>}>
+                    <Route exact path={"/ingredients/new"}
+                           render={(props) => <AddIngredient isEdit={false} {...props} />}>
                     </Route>
                     <Route exact path={"/ingredients"}
                            render={(props) => <Ingredients ingredients={this.state.ingredients} {...props} />}>
@@ -36,9 +37,9 @@ class App extends Component {
                     <Route exact path={"/ingredient/:name/edit"}
                            render={(props) => <AddIngredient isEdit={true} {...props}/>}>
                     </Route>
-                    <Route exact path={"/"} render={() => <AddIngredient isEdit={false}/>}>
+                    <Route exact path={"/"} render={(props) => <AddIngredient isEdit={false} {...props} />}>
                     </Route>
-                    <Redirect to={"/"} />
+                    <Redirect to={"/"}/>
 
                 </div>
             </Router>
@@ -46,8 +47,10 @@ class App extends Component {
     }
 
     loadIngredients() {
-        const ingredients = getAllIngredients();
-        this.setState({ingredients});
+        ingredientsService
+            .fetchIngredients()
+            .then((ingredients) => this.setState({ingredients: ingredients.data.content}));
+
     }
 }
 

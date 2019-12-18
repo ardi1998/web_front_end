@@ -4,8 +4,6 @@ import React, {Component} from "react";
 // TODO: in case it is edit it should make call to api
 class AddIngredient extends Component {
 
-    isEdit = false;
-
     constructor(props) {
         super(props);
         this.state = {
@@ -15,6 +13,12 @@ class AddIngredient extends Component {
             amount: 0.0,
             save: false
         };
+
+        if (props.isEdit) {
+            this.getIngredient();
+        }
+
+        this.getIngredient = this.getIngredient.bind(this);
 
         this.handleTextChange = this.handleTextChange.bind(this);
         this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
@@ -116,9 +120,10 @@ class AddIngredient extends Component {
     }
 
     handleSubmit(event) {
-        //TODO: sent request to API to save currentIngredient
+        // TODO: sent request to API to save currentIngredient
         event.preventDefault();
         console.log(this.state);
+        // TODO: redirect user to /ingredients
     }
 
     handleTextChange(event) {
@@ -146,7 +151,11 @@ class AddIngredient extends Component {
     handleCancel(event) {
 
     }
-}
 
+    getIngredient() {
+        // TODO: make call to API to get ingredient
+        const name = this.props.match.params.name;
+    }
+}
 
 export default AddIngredient;

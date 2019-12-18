@@ -5,7 +5,9 @@ class Ingredients extends React.Component {
 
     constructor(props) {
         super(props);
-
+        console.log(this.props);
+        this.handleDetails = this.handleDetails.bind(this);
+        this.handleEdit = this.handleEdit.bind(this);
     }
 
     render() {
@@ -48,16 +50,16 @@ class Ingredients extends React.Component {
                 <td scope="col">{o.veggie}</td>
                 <td scope="col">{o.spicy}</td>
                 <td scope="col">
-                    <button className="btn btn-sm btn-secondary">
+                    <button className="btn btn-sm btn-secondary" onClick={() => this.handleEdit(o.name)}>
                         <span className="fa fa-edit"/>
                         <span><strong>Edit</strong></span>
                     </button>
-                    <button onClick={this.handleRemove(o.name)} className="btn btn-sm btn-outline-secondary ">
+                    <button onClick={() => this.handleRemove(o.name)} className="btn btn-sm btn-outline-secondary ">
                         <span className="fa fa-remove"/>
                         <span><strong>Remove</strong></span>
                     </button>
                     <button className="btn btn-sm btn-outline-dark"
-                            onClick={this.handleRemove(o.name)}>
+                            onClick={() => this.handleDetails(o.name)}>
                         <span><strong>Details</strong></span>
                     </button>
                 </td>
@@ -73,7 +75,11 @@ class Ingredients extends React.Component {
     }
 
     handleDetails(name) {
-        //TODO: Redirect to details of name
+        this.props.history.push('/ingredient/' + name);
+    }
+
+    handleEdit(name) {
+        this.props.history.push('/ingredient/' + name + '/edit');
     }
 
 }

@@ -28,11 +28,15 @@ class App extends Component {
                 <div className="container">
                     <Route path={"/pizzas"} render={() => <Pizza/>}>
                     </Route>
-                    <Route path={"/ingredients/new"} render={() => <AddIngredient/>}>
+                    <Route exact path={"/ingredients/new"} render={() => <AddIngredient isEdit={false}/>}>
                     </Route>
                     <Route exact path={"/ingredients"}
-                           render={() => <Ingredients ingredients={this.state.ingredients}/>}>
+                           render={(props) => <Ingredients ingredients={this.state.ingredients} {...props} />}>
                     </Route>
+                    <Route exact path={"/ingredient/:name/edit"}
+                           render={(props) => <AddIngredient isEdit={true} {...props}/>}>
+                    </Route>
+
                 </div>
             </Router>
         );

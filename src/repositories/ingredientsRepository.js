@@ -18,6 +18,10 @@ const ingredientsService = {
     },
     deleteIngredient: (name) => {
         return axios.delete(`${BASE_URL}/ingredients/${name}`);
+    },
+    getPizzas: (name) => {
+        console.log(`${BASE_URL}/ingredients/${name}/pizzas`);
+        return axios.get(`${BASE_URL}/ingredients/${name}/pizzas`);
     }
 };
 

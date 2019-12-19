@@ -14,7 +14,9 @@ export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            ingredients: []
+            ingredients: [],
+            ingredient: {},
+            pizzas: []
         };
         this.addIngredient = this.addIngredient.bind(this);
     }
@@ -40,7 +42,11 @@ export default class App extends Component {
                                                            onDelete={(name) => this.deleteIngredient(name)}/>}>
                     </Route>
                     <Route exact path={"/ingredient/:name"}
-                           render={(props) => <Ingredient/>}>
+                           render={(props) => <Ingredient
+                               {...props}
+                               pizzas={this.state.pizzas}
+                               ingredient={this.state.ingredient}
+                               onChange={(name) => this.getIngredient(name)}/>}>
                     </Route>
                     <Route exact path={"/ingredient/:name/edit"}
                            render={(props) =>
@@ -48,9 +54,10 @@ export default class App extends Component {
                                               {...props}
                                               onEditIngredient={(ingredient) => this.editIngredient(ingredient)}/>}>
                     </Route>
-                    <Route exact path={"/"} render={(props) => <AddIngredient isEdit={false}
-                                                                              onAddIngredient={(ingredient) => this.addIngredient(ingredient)}
-                                                                              {...props} />}>
+                    <Route exact path={"/"}
+                           render={(props) => <AddIngredient isEdit={false}
+                                                             onAddIngredient={(ingredient) => this.addIngredient(ingredient)}
+                                                             {...props} />}>
                     </Route>
                     {/*<Redirect to={"/"}/>*/}
 
@@ -60,7 +67,13 @@ export default class App extends Component {
     }
 
     getIngredient(name) {
-        //TODO: get req to API
+        ingredientsService.getIngredient(name)
+            .then(ingredient => this.setState({ingredient: ingredient.data}));
+
+        ingredientsService.getPizzas(name)
+            .then((pizzas) => {
+                this.setState({pizzas: pizzas.data});
+            });
     }
 
     editIngredient(ingredient) {

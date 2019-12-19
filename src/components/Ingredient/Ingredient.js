@@ -1,11 +1,22 @@
-import React from "react";
+import React, {Component} from "react";
 
-// TODO: Should make call to api and get needed Ingredient
-const Ingredient = (props) => {
-    return (
-        <h1>Lazy ingredient details page</h1>
+export default class Ingredient extends Component {
 
-    )
-};
+    componentDidMount() {
+        this.props.onChange(this.props.match.params.name);
+    }
 
-export default Ingredient;
+    render() {
+        return (
+            <div>
+                <h1>
+                    {this.props.ingredient.name}
+                </h1>
+                {<ul>
+                    {this.props.pizzas.map(o => (<li key={o.name}>{o.name}</li>))}
+                </ul>}
+            </div>
+        )
+    }
+
+}

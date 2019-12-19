@@ -123,7 +123,7 @@ class AddIngredient extends Component {
                 .then(o => this.props.history.push(`/ingredient/${o.data}`));
         else
             ingredientsService.editIngredient(this.state)
-                .then(o => this.props.history.push(`/ingredient/${o.data}`));
+                .then(o => this.props.history.push(`/ingredient/${o.data.name}`));
     }
 
     handleTextChange(event) {

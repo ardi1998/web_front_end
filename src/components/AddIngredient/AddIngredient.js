@@ -119,11 +119,11 @@ class AddIngredient extends Component {
     handleSubmit(event) {
         event.preventDefault();
         if (this.state.isEdit)
-            ingredientsService.addIngredient(this.state)
-                .then(o => this.props.history.push(`/ingredient/${o.data}`));
+            this.props.onEditIngredient(this.state);
+
         else
-            ingredientsService.editIngredient(this.state)
-                .then(o => this.props.history.push(`/ingredient/${o.data.name}`));
+            this.props.onAddIngredient(this.state);
+
     }
 
     handleTextChange(event) {
@@ -153,7 +153,6 @@ class AddIngredient extends Component {
     }
 
     getIngredient() {
-        // TODO: make call to API to get ingredient
         const name = this.props.match.params.name;
         ingredientsService.getIngredient(name)
             .then(o => this.setState(o.data));

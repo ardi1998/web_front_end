@@ -1,7 +1,7 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Header from "../Header/header";
-import {BrowserRouter as Router, Redirect, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 import Pizza from "../Pizza/Pizza";
 import AddIngredient from "../AddIngredient/AddIngredient";
@@ -9,14 +9,14 @@ import Ingredients from "../Ingredients/Ingredients";
 import Ingredient from "../Ingredient/Ingredient";
 import ingredientsService from "../../repositories/ingredientsRepository";
 
-class App extends React.Component {
+export default class App extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
             ingredients: []
         };
-
+        this.addIngredient = this.addIngredient.bind(this);
     }
 
     componentDidMount() {
@@ -31,7 +31,8 @@ class App extends React.Component {
                     <Route path={"/pizzas"} render={() => <Pizza/>}>
                     </Route>
                     <Route exact path={"/ingredients/new"}
-                           render={(props) => <AddIngredient isEdit={false} {...props} />}>
+                           render={(props) => <AddIngredient isEdit={false} {...props}
+                                                             onAddIngredient={(ingredient) => this.addIngredient(ingredient)}/>}>
                     </Route>
                     <Route exact path={"/ingredients"}
                            render={(props) => <Ingredients {...props}
@@ -42,11 +43,16 @@ class App extends React.Component {
                            render={(props) => <Ingredient/>}>
                     </Route>
                     <Route exact path={"/ingredient/:name/edit"}
-                           render={(props) => <AddIngredient isEdit={true} {...props}/>}>
+                           render={(props) =>
+                               <AddIngredient isEdit={true}
+                                              {...props}
+                                              onEditIngredient={(ingredient) => this.editIngredient(ingredient)}/>}>
                     </Route>
-                    <Route exact path={"/"} render={(props) => <AddIngredient isEdit={false} {...props} />}>
+                    <Route exact path={"/"} render={(props) => <AddIngredient isEdit={false}
+                                                                              onAddIngredient={(ingredient) => this.addIngredient(ingredient)}
+                                                                              {...props} />}>
                     </Route>
-                    <Redirect to={"/"}/>
+                    {/*<Redirect to={"/"}/>*/}
 
                 </div>
             </Router>
@@ -57,8 +63,19 @@ class App extends React.Component {
         //TODO: get req to API
     }
 
+    editIngredient(ingredient) {
+        ingredientsService.editIngredient(ingredient)
+            .then(o => window.location.replace(`/ingredient/${o.data.name}`));
+    }
+
     addIngredient(ingredient) {
-        // TODO: send ingredient to API
+        this.setState((prev) => {
+            return {
+                ingredients: prev.ingredients.concat([ingredient])
+            }
+        });
+        ingredientsService.addIngredient(ingredient)
+            .then(o => window.location.replace(`/ingredient/${o.data}`));
     }
 
     deleteIngredient(name) {
@@ -79,5 +96,3 @@ class App extends React.Component {
 
 
 }
-
-export default App;

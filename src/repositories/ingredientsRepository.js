@@ -22,6 +22,10 @@ const ingredientsService = {
     getPizzas: (name) => {
         console.log(`${BASE_URL}/ingredients/${name}/pizzas`);
         return axios.get(`${BASE_URL}/ingredients/${name}/pizzas`);
+    },
+    searchIngredient: (key) => {
+        console.log(`${BASE_URL}/ingredients/search/${key}`);
+        return axios.get(`${BASE_URL}/ingredients/search/${key}`);
     }
 };
 

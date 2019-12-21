@@ -38,6 +38,7 @@ export default class App extends Component {
                     </Route>
                     <Route exact path={"/ingredients"}
                            render={(props) => <Ingredients {...props}
+                                                           onSearch={(key) => this.onSearch(key)}
                                                            ingredients={this.state.ingredients}
                                                            onDelete={(name) => this.deleteIngredient(name)}/>}>
                     </Route>
@@ -88,7 +89,8 @@ export default class App extends Component {
             }
         });
         ingredientsService.addIngredient(ingredient)
-            .then(o => window.location.replace(`/ingredient/${o.data}`));
+            .then(o => window.location.replace(`/ingredient/${o.data}`))
+            .catch((error) => window.alert(error.message));
     }
 
     deleteIngredient(name) {
@@ -105,6 +107,17 @@ export default class App extends Component {
             .then((ingredients) => {
                 this.setState({ingredients: ingredients.data.content});
             });
+    }
+
+    onSearch(name) {
+        if (name === '')
+            return;
+
+        ingredientsService.searchIngredient(name).then(ingredients => {
+                console.log(ingredients.data);
+                this.setState({ingredients: ingredients.data});
+            }
+        );
     }
 
 

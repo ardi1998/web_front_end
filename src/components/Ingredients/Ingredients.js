@@ -5,13 +5,18 @@ class Ingredients extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            search: ''
+        };
         this.handleDetails = this.handleDetails.bind(this);
         this.handleEdit = this.handleEdit.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
 
     render() {
         return (
             <div className="row">
+                {this.getSearch()}
                 <h4 className="text-upper text-left">Ingredients</h4>
                 <div className="table-responsive">
                     <table className="table tr-history table-striped small">
@@ -24,6 +29,12 @@ class Ingredients extends React.Component {
                 </Link>
 
             </div>
+        )
+    }
+
+    getSearch() {
+        return (
+            <input type="text" value={this.state.search} onChange={this.handleChange}/>
         )
     }
 
@@ -80,6 +91,10 @@ class Ingredients extends React.Component {
         this.props.history.push(`/ingredient/${name}/edit`);
     }
 
+    handleChange(event) {
+        this.setState({search: event.target.value});
+        this.props.onSearch(event.target.value);
+    }
 }
 
 export default Ingredients;
